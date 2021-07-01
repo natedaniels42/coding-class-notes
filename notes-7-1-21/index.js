@@ -61,6 +61,29 @@
 // console.log(sortMixed(mixed));
 
 
+// Fill
+// Fills all spots in an array of predetermined length with a specified value
+
+// You are given a positive integer n.  
+// Create an array that is n length where each item is an array with just the index of that particular array in it
+// if n === 6 result would be [[0], [1], [2], [3], [4], [5]]
+
+const fillArray = (n) => {
+    const arr = [];
+
+    for (let i = 0; i < n; i++) {
+        arr.push([i]);
+    }
+
+    return arr;
+}
+
+// const fillArray = (n) => {
+//     return new Array(n).fill(null).map((x, i) => [i])
+// }
+
+console.log(fillArray(6));
+
 // Map
 // Takes an array and returns a new array by performing an operation on each item
 
@@ -188,11 +211,11 @@
 
 
 // Insert arrays into middle of a new array
-const numbers = [1,2,3,7,8,9];
- const arr3 = [4,5,6];
- const arr4 = [10,11,12];
- const newNumbers = [...numbers.slice(0,3),...arr3,...numbers.slice(3),...arr4];
-console.log(newNumbers);
+// const numbers = [1,2,3,7,8,9];
+// const arr3 = [4,5,6];
+// const arr4 = [10,11,12];
+// const newNumbers = [...numbers.slice(0,3),...arr3,...numbers.slice(3),...arr4];
+// console.log(newNumbers);
 
 
 // const obj1 = {
