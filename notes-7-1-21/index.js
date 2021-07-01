@@ -68,21 +68,21 @@
 // Create an array that is n length where each item is an array with just the index of that particular array in it
 // if n === 6 result would be [[0], [1], [2], [3], [4], [5]]
 
-const fillArray = (n) => {
-    const arr = [];
+// const fillArray = (n) => {
+//     const arr = [];
 
-    for (let i = 0; i < n; i++) {
-        arr.push([i]);
-    }
+//     for (let i = 0; i < n; i++) {
+//         arr.push([i]);
+//     }
 
-    return arr;
-}
+//     return arr;
+// }
 
 // const fillArray = (n) => {
 //     return new Array(n).fill(null).map((x, i) => [i])
 // }
 
-console.log(fillArray(6));
+// console.log(fillArray(6));
 
 // Map
 // Takes an array and returns a new array by performing an operation on each item
