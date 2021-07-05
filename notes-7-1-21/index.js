@@ -28,7 +28,7 @@
 //             return 1;
 //         } else {
 //             return -1;
-//         }
+//         } else {
 //     })
 // }
 
@@ -233,3 +233,15 @@
 //Combine 2 objects together
 // const newObj = { ...obj1, ...obj2 };
 // console.log(newObj);
+
+
+// Determine if a given email address is valid
+// Email must follow normal email format (XXXXXX@XXXX.XXX)
+// It must end with either .com, .edu, or .nz
+// Email can contain numbers but can't begin with a number
+
+// const email1 = john.doe@email.com // returns true
+// const email2 = john.doe@email // returns false
+// const email3 = john.doe@email.edu // returns true 
+// const email4 = john.doe@email.nz // returns true
+// const email5 = 12john@email.com // returns false
