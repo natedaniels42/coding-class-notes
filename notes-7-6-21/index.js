@@ -22,6 +22,26 @@
 // console.log(validEmail(email4))
 // console.log(validEmail(email5))
 
+// Regex breakdown
+//  / Initializes the regex
+//  ^ Says that the string must start with the regex
+//  [a-z] the first character must be an alphabetic character
+//  ([\w!#$%\.]+)?
+    //  () groups it all together
+    //  [] means that these will all be the options for a single character
+    //  \w means that the character can be any alphabetic character (a-zA-Z), number(0-9) or underscore (_)
+    //  !#$% in this context are just saying that this character can be those special characters
+    //  \. the character can also be . but since the . is a special operator it uses the \ to say it is just a .
+    //  + means that the character choice from the brackets can happen from at least one time to as many as needed
+    //  ? means that everything in the () is optional
+//  @ means that there is an @ as this position
+//  [\w!#$%]+  same as lines 29-35 minus the () and \.
+//  \. this is a . at this position
+//  (com|edu|nz) Here there is either com, edu or nz
+//  $ represents that the string must end with the regex
+//  / closes the regex
+//  i means that all the alphabetic characters are inclusive (can be either lower or uppercase)
+//  .test() runs the string through the regex and returns true if it passes
 
 // Validate Phone Number
 // Phone number will consist of a normal phone number with area (10 numbers total)
@@ -48,6 +68,24 @@
 // console.log(validPhone(phone5));
 // console.log(validPhone(phone6));
 
+// Regex Breakdown
+//  / initializes the regex
+//  ^ string must begin with the regex
+//  \d? means that the first character may be a number (0-9) but the ? means it is optional
+//  \s? optional space
+//  \(? optional open parentheses (must use \ because it is a special character)
+//  -? optional dash
+//  \d{3} 3 numbers(0-9)
+//  \s? optional space
+//  \)? optional close parentheses
+//  -? optional dash
+//  \d{3} 3 numbers(0-9)
+//  \s? optional space
+//  -? optional dash
+//  \d{4} 4 numbers(0-9)
+//  $ string must end with regex
+//  / closes the regex
+//  .test() checks the string against the regex and returns true if it passes 
 
 // Valid Password
 // Password must be between 8 and 16 characters long
