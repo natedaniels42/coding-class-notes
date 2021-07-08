@@ -8,14 +8,14 @@
 
 // const findDate = (year, day) => {
 //     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-//     const date = new Date(year, 0, 1 + day - 1);
+//     const date = new Date(year, 0, day);
 //     return `Day ${date.getDate()} of ${months[date.getMonth()]} in the year ${date.getFullYear()}`;
 // }
 
 // Day, month and year separated to variables to make the return statement easier to read
 // const findDate = (year, day) => {
 //     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-//     const date = new Date(year, 0, 1 + day - 1);
+//     const date = new Date(year, 0, day);
 //     const dateDay = date.getDate();
 //     const dateMonth = date.getMonth();
 //     const dateYear = date.getFullYear();
