@@ -37,16 +37,16 @@
 
 // A date can also be specified using arguments (year, day, month, etc)
 
-// const date = new Date(1980, 1, 14);
+// const date = new Date(1980, 1, 14, 11, 12, 21);
 // console.log(date);
-// console.log(`getDay gives you the day of the week zero indexed (Sunday is 0): ${date.getDay()}`);
-// console.log(`getDate gives you the day of the month: ${date.getDate()}`);
-// console.log(`getMonth gives you the index of the month zero indexed(January is 0): ${date.getMonth()}`);
-// console.log(`getFullYear gives you the 4 digit year: ${date.getFullYear()}`);
+// // console.log(`getDay gives you the day of the week zero indexed (Sunday is 0): ${date.getDay()}`);
+// // console.log(`getDate gives you the day of the month: ${date.getDate()}`);
+// // console.log(`getMonth gives you the index of the month zero indexed(January is 0): ${date.getMonth()}`);
+// // console.log(`getFullYear gives you the 4 digit year: ${date.getFullYear()}`);
 // console.log(`toTimeString: ${date.toTimeString()}`) // 00:00:00 GMT-0600 (Central Standard Time)
-// console.log(`toTimeString: ${date.toDateString()}`) // Thu Feb 14 1980
-// console.log(`toTimeString: ${date.toLocaleTimeString()}`) // 12:00:00 AM
-// console.log(`toTimeString: ${date.toLocaleDateString()}`) // 2/14/1980
+// console.log(`toDateString: ${date.toDateString()}`) // Thu Feb 14 1980
+// console.log(`toLocaleTimeString: ${date.toLocaleTimeString()}`) // 12:00:00 AM
+// console.log(`toLocaleDateString: ${date.toLocaleDateString()}`) // 2/14/1980
 
 // Substring vs Substr
 // Both give a specific segment of the string it is attached to
@@ -98,6 +98,7 @@
 
 // Solution with regex
 // const ending = (str, end) => {
+//     // Define your regular expression
 //     const regex = new RegExp(`${end}$`);
 
 //     return regex.test(str);
@@ -226,67 +227,4 @@
 // console.log(padding('word', '0', 20)); // will return '00000000word00000000'
 // console.log(padding('piano', '%', 14)); // will return '%%%%%piano%%%%'
 // console.log(padding('xylophone', ' ', 50)) // will return '                     xylophone                    '
-
-// https://www.codewars.com/kata/57ebaa8f7b45ef590c00000c
-// You are given an array of numbers (as strings). You must return a string where the characters are determined from those numbers
-// the numbers correspond to letters in reverse order (z=1, y=2, ..., a=26) and !=27, ?=28, and ' '=29
-
-// const numsToStr = (arr) => {
-//     const alpha = [null,'z','y','x','w','v','u','t','s','r','q','p','o','n','m','l','k','j','i','h','g','f','e','d','c','b','a','!','?',' '];
-
-//     return arr.map(x => alpha[x]).join('');
-// }
-
-// console.log(numsToStr(['24', '12', '23', '22', '4', '26', '9', '8'])) // returns 'codewars'
-// console.log(numsToStr(['25','7','8','4','14','23','8','25','23','29','16','16','4'])) // returns 'btswmdsbd kkw'
-// console.log(numsToStr(['4', '24'])) // returns 'wc'
-
-// CharCodeAt
-// Gives you the numeric code associated with the selected character
-// Examples (a = 97, T = 84, - = 45)
-// You can get the code by using charCodeAt()
-// Example: console.log('a'.charCodeAt(0)) // returns 97
-// Given a string replace all the letters with their position in the alphabet (a=1, b=2, c=3, etc)
-// Ignore the case of the letter (a=A)
-// Ignore all spaces and non alphabet characters
-// return a string with each of the positions separated by a space
-// https://www.codewars.com/kata/546f922b54af40e1e90001da
-
-// const letterCodes = (text) => {
-//     return text.toLowerCase().replace(/[^a-z]/gi, '').split('').map(x => x.charCodeAt(0) - 96).join(' ');
-// }
-
-// Steps split up to make the code easier to read
-// const letterCodes = (text) => {
-//     // Alpha is a string that contains all alphabetic characters to test against the text characters
-//     const alpha = 'abcdefghijklmnopqrstuvwxyz';
-//     
-//     Text is converted to lower case so that all the letters will return the right values
-//     text = text.toLowerCase();
-//     //console.log(text);
-//     
-//     Split the text into an array of single characters
-//     text = text.split('');
-//     //console.log(text);
-//     
-//     Use filter to remove all non alphabetic items using our alpha string
-//     text = text.filter(x => alpha.includes(x));
-//     //console.log(text);
-//     
-//     Use map to convert each letter to the correct number (to get this we take the char code and subtract 96)
-//     text = text.map(x => x.charCodeAt(0) - 96);
-//     //console.log(text);
-//     
-//     Use join with a space ' ' to create our numbered string with spaces in between numbers
-//     text = text.join(' ');
-//     //console.log(text);
-//     
-//     Return the result
-//     return text;
-// }
-
-// // Tests
-// console.log(letterCodes('abcde')) // will return '1 2 3 4 5'
-// console.log(letterCodes("The sunset sets at twelve o' clock.")) // will return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"
-// console.log(letterCodes("The narwhal bacons at midnight.")) // will return "20 8 5 14 1 18 23 8 1 12 2 1 3 15 14 19 1 20 13 9 4 14 9 7 8 20"
 
