@@ -1,6 +1,10 @@
 // Recursion
 
 // Recursion is where a solution is found by calling itself within the function body using changing arguments
+// Recursion requires 2 things: a recursive case and a base case
+// The recursive case refers to the conditions under which the function will perform an action and then run itself again
+// The base case is a condition in which the function will stop running
+// If there is no base case an infinite loop will occur
 
 
 // Palindrome
@@ -129,16 +133,29 @@
 //     return fib(num - 1) + fib(num - 2);
 // }
 
+
+// Recursion is great for taking complex problems and breaking them down into simpler steps
+// However, recursion is at best only as efficient as an iterative process and at worst is way less efficient
+// When dealing with a case like the fibonacci it can make the efficiency goes down a great deal because every recursive call to the function doesn't transfer over the data it has already collected
+// This means it is constantly running the same call over and over as it works it's way down to get all the information it needs
+// To fix this we can use memoization, using an object to save our results as we work our way down
+// The difference in time complexity with normal recursion and memoization is O 2^n as opposed to O n
+
+
 // Recursive Solution with memoization
+// We start by adding a new parameter, memo to represent our memoization object
+// this will start as an empty object
 // const fib = (num, memo = {}) => {
+//     // Start with our normal base case for ending the function
 //     if (num < 3) {
 //         return 1;
 //     }
-
+        // Now we check if we have already found the result for the current number.  If so, we return that number
 //     if (memo[num]) {
 //         return memo[num];
 //     }
 
+        // when we do our recursive call we save the result in the memo object so it is available on all future calls
 //     return memo[num] = fib(num - 1, memo) + fib(num - 2, memo);
 // }
 
@@ -220,6 +237,7 @@
 // console.log(denominators(35, 80)); // returns 5
 
 
+
 // Some uses of recursion with data structures
 
 // Find the node in a linked list by the data
@@ -290,7 +308,7 @@
 // console.log(list.getNodeByData(5));
 
 
-// Binary Trees utilize recursion a lot to travel through the tree
+// Binary Treesrequire recursion to travel through the tree
 // A couple good examples of this is insertion into the tree and depth first traversal
 
 // Basic BinaryTree
